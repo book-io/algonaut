@@ -579,7 +579,7 @@ pub struct Account {
     /// `spend` the address against which signing should be checked. If empty, the address of the
     /// current account is used. This field can be updated in any transaction by setting the
     /// RekeyTo field.
-    #[serde(rename = "auth-addr", skip_serializing_if = "Option::is_none")]
+    #[serde(default, rename = "auth-addr")]
     #[serde_as(as = "Option<DisplayFromStr>")]
     pub auth_addr: Option<Address>,
 
